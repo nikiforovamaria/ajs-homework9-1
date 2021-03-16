@@ -28,3 +28,20 @@ test('4 - should give an error about type', () => {
     return daemon;
   }).toThrow(result);
 });
+
+test('5 - big attack', () => {
+  const magician = new MathChar('Mike', 'Magician');
+  magician.attack = 200;
+  magician.stoned = true;
+  magician.distance = 2;
+  const result = 175;
+  expect(magician.attack).toBe(result);
+});
+
+test('6 - should return attack value 0', () => {
+  const deamon = new MathChar('Mike', 'Daemon');
+  deamon.attack = 1;
+  deamon.stoned = true;
+  const result = 0;
+  expect(deamon.attack).toBe(result);
+});
