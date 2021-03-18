@@ -30,7 +30,7 @@ export default class MathChar extends Character {
   }
 
   get attack() {
-    let attack = this.attackVal * ((100 - (this.distanceVal - 1) * 10) / 100);
+    let attack = this.attackVal * ((11 - this.distanceVal) / 10);
     if (this.stoned) {
       attack -= Math.log2(this.distance) * 5;
     }
